@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+<br />
+<h1 style="text-align: center">Personagens</h1>
+<br />
+<div class="card">
+  <div class="card-header"><h3>Cadastre seu personagem favorito:</h3></div>
+  <div class="card-body">
+    <form action="{{url_for('home')}}" method="post">
+      <label for="nome" style="margin-bottom: 5px">Nome do personagem:</label
+      ><br />
+      <input type="text" class="form-control" name="nome" id="nome" /><br />
+      <label for="jogo" style="margin-bottom: 5px">Origem do Personagem:</label
+      ><br />
+      <input
+        type="text"
+        name="origem"
+        id="origem"
+        class="form-control"
+      /><br /><br />
+      <input type="submit" value="Enviar" class="btn btn-danger" />
+    </form>
+  </div>
+</div>
+<br />
+<br />
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome do Personagem</th>
+      <th scope="col">Origem</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in itensHome: %}
+    <tr>
+      <th scope="row">{{item.ID}}</th>
+      <td>{{item.Nome}}</td>
+      <td>{{item.Origem}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br />
+<script>
+  document.title = "Início";
+</script>
+
+{% endblock content %}

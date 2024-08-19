@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+
+<br />
+<h1 style="text-align: center">Todos os Personagens</h1>
+<br />
+
+{% for i in itensHome: %}
+<div class="card">
+  <div class="card-header">Personagem {{i.ID}}</div>
+  <div class="card-body">
+    <p>Nome: {{i.Nome}}</p>
+    <p>Origem: {{i.Origem}}</p>
+  </div>
+</div>
+<br />
+{% endfor %} {% endblock content %}
